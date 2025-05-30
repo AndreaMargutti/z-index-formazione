@@ -1,5 +1,5 @@
 ---
-theme: default
+theme: seriph
 title: Z-Index and Stacking Contexts in CSS
 class: text-center
 fonts:
