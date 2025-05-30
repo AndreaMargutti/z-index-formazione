@@ -34,4 +34,13 @@ The higher the z-index value, the closer the element will appear to the user.
 
 But there's a problem that many developers face when working with z-index:
 
-## <div class="text-center">[Z-Index not Working](https://codepen.io/AndreaMargutti/pen/QwbwaoW?editors=1100)</div>
+## <div class="text-center mb-10">[Z-Index not Working](https://codepen.io/AndreaMargutti/pen/QwbwaoW?editors=1100)</div>
+
+Why does it not work as expected?
+Well, to explain that, we need to understand what stacking contexts are and how they works.
+
+## Stackging Contexts
+
+*Stacking context is a three-dimensional conceptualization of HTML elements along an imaginary z-axis relative to the user, who is assumed to be facing the viewport or the webpage. The stacking context determines how elements are layered on top of one another along the z-axis (think of it as the "depth" dimension on your screen). Stacking context determines the visual order of how overlapping content is rendered.*
+
+<div class="text-end"><strong>Source:</strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_positioned_layout/Stacking_context">MDN</a></div>
