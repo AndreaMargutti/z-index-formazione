@@ -106,7 +106,7 @@ The most common case is when we are using flex: flex items can use the property 
 4. [Understanding z-index](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_positioned_layout/Understanding_z-index)
 5. [My approach to using z-index](https://david-gilbertson.medium.com/my-approach-to-using-z-index-eca67feb079c)
 
-## <div class="my-6">Dive Deeper</div>
+## <div class="my-6">Deep Dive</div>
 
 1. [Layout Algorithms](https://www.joshwcomeau.com/css/understanding-layout-algorithms)
 2. [Isolation Property - Browser Compability](https://caniuse.com/?search=isolation)
