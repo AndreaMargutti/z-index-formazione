@@ -120,7 +120,10 @@ The isolation CSS property determines whether an element must create a new stack
 
 With the default value *auto*, no new stacking context is created—unless it is overridden by other properties such as **transform**, **filter**, **opacity**, etc.
 
+
 ---
+
+<div class="text-sm my-4">
 
 # Some Useful Resources
 
@@ -130,8 +133,23 @@ With the default value *auto*, no new stacking context is created—unless it is
 4. [Understanding z-index](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_positioned_layout/Understanding_z-index)
 5. [My approach to using z-index](https://david-gilbertson.medium.com/my-approach-to-using-z-index-eca67feb079c)
 
-## <div class="my-6">Deep Dive</div>
+</div>
+
+<div class="text-sm my-4">
+
+## <span>Deep Dive</span>
 
 1. [Layout Algorithms](https://www.joshwcomeau.com/css/understanding-layout-algorithms)
 2. [Isolation Property - Browser Compability](https://caniuse.com/?search=isolation)
 3. [CSS Stacking Context inspector](https://chromewebstore.google.com/detail/css-stacking-context-insp/apjeljpachdcjkgnamgppgfkmddadcki?pli=1)
+
+</div>
+
+## <span>Debugging Tools</span>
+
+<div class="text-sm my-4">
+
+1. **Chrome DevTools Extension**: [CSS Stacking Context Inspector](https://chromewebstore.google.com/detail/css-stacking-context-insp/apjeljpachdcjkgnamgppgfkmddadcki)
+2. **VsCode Extension**: [Better CSS Stacking Contexts](https://marketplace.visualstudio.com/items?itemName=mikerheault.vscode-better-css-stacking-contexts)
+
+</div>
