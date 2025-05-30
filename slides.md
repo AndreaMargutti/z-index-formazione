@@ -105,3 +105,9 @@ The most common case is when we are using flex: flex items can use the property 
 3. [Stacking without the z-index property](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_positioned_layout/Stacking_without_z-index)
 4. [Understanding z-index](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_positioned_layout/Understanding_z-index)
 5. [My approach to using z-index](https://david-gilbertson.medium.com/my-approach-to-using-z-index-eca67feb079c)
+
+## <div class="my-6">Dive Deeper</div>
+
+1. [Layout Algorithms](https://www.joshwcomeau.com/css/understanding-layout-algorithms)
+2. [Isolation Property - Browser Compability](https://caniuse.com/?search=isolation)
+3. [CSS Stacking Context inspector](https://chromewebstore.google.com/detail/css-stacking-context-insp/apjeljpachdcjkgnamgppgfkmddadcki?pli=1)
