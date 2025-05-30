@@ -101,6 +101,12 @@ The most common case is when we are using flex: flex items can use the property 
 
 ---
 
+# Isolation Property
+
+
+
+---
+
 # Some Useful Resources
 
 1. [z-index](https://developer.mozilla.org/en-US/docs/Web/CSS/z-index)
