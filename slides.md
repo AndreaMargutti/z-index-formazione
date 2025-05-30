@@ -23,7 +23,7 @@ level: 2
 
 # What is Z-Index?
 
-Z-Index is a CSS property that controls the vertical stacking order of elements that <ins>overlap</ins>
+Z-Index is a CSS property that controls the vertical stacking order of elements that <ins>overlap</ins>.
 The higher the z-index value, the closer the element will appear to the user.
 
 <img src="https://bitsofco.de/img/zeDmwlyRbq-780.png" width="650px" class="mx-auto"/>
@@ -37,9 +37,9 @@ But there's a problem that many developers face when working with z-index:
 ## <div class="text-center mb-10 text-blue-300">[Z-Index not Working](https://codepen.io/AndreaMargutti/pen/QwbwaoW?editors=1100)</div>
 
 Why does it not work as expected?
-Well, to explain that, we need to understand what stacking contexts are and how they works.
+Well, to explain that, we need to understand what stacking contexts are and how they work.
 
-## Stackging Contexts
+## Stacking Contexts
 
 *Stacking context is a three-dimensional conceptualization of HTML elements along an imaginary z-axis relative to the user, who is assumed to be facing the viewport or the webpage. The stacking context determines how elements are layered on top of one another along the z-axis (think of it as the "depth" dimension on your screen). Stacking context determines the visual order of how overlapping content is rendered.*
 
@@ -77,8 +77,8 @@ To solve the problem with z-index, we need to understand how stacking contexts w
 
 ## <div class="text-center mb-10 text-blue-300">[Solution](https://codepen.io/AndreaMargutti/pen/KwpwZjd)</div>
 
-This works because the red div creates a new stacking context, and so it's children (orange div) are positioned relative to it, not the body.
-If we want to position the orange div on top of the blue one we need to set a z-index value higer thant the blue one on the red div.
+This works because the red div creates a new stacking context, which means its children (orange div) are positioned relative to it, not the body.
+If we want to position the orange div on top of the blue one we need to set a z-index value higher than the blue one on the red div.
 
 ### <span class="text-red-300">[What the Heck, z-index??](https://www.joshwcomeau.com/css/stacking-contexts/)</span>
 
@@ -87,10 +87,8 @@ If we want to position the orange div on top of the blue one we need to set a z-
 # This relationship is not a One to One
 
 It's important to note that a stacking context is not a one-to-one relationship with z-index. An element can create a stacking context without having a z-index value set, and in
-the opposite way an element can have a z-index value set without creating a stacking context. <span class="text-red-600">**They DO NOT always go toghether**</span>.
+the opposite way an element can have a z-index value set without creating a stacking context. <span class="text-red-600">**They DO NOT always go together**</span>.
 The most common case is when we are using flex: flex items can use the property *z-index* but <ins>they do not always create a stacking context</ins>.
-
-<!-- TODO: add a codepen example -->
 
 ## <a href="https://codepen.io/AndreaMargutti/pen/bNdEGoe?editors=1100" class="text-blue-300">z-index with flex</a>
 
