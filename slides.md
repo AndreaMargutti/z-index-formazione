@@ -34,7 +34,7 @@ The higher the z-index value, the closer the element will appear to the user.
 
 But there's a problem that many developers face when working with z-index:
 
-## <div class="text-center mb-10">[Z-Index not Working](https://codepen.io/AndreaMargutti/pen/QwbwaoW?editors=1100)</div>
+## <div class="text-center mb-10 text-blue-300">[Z-Index not Working](https://codepen.io/AndreaMargutti/pen/QwbwaoW?editors=1100)</div>
 
 Why does it not work as expected?
 Well, to explain that, we need to understand what stacking contexts are and how they works.
@@ -44,3 +44,40 @@ Well, to explain that, we need to understand what stacking contexts are and how 
 *Stacking context is a three-dimensional conceptualization of HTML elements along an imaginary z-axis relative to the user, who is assumed to be facing the viewport or the webpage. The stacking context determines how elements are layered on top of one another along the z-axis (think of it as the "depth" dimension on your screen). Stacking context determines the visual order of how overlapping content is rendered.*
 
 <div class="text-end"><strong>Source:</strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_positioned_layout/Stacking_context">MDN</a></div>
+
+---
+
+# The Solution
+
+To solve the problem with z-index, we need to understand how stacking contexts work and how to create them.
+
+## What creates a stacking context?
+
+<div class="text-sm">
+
+1. Root element of the document.
+2. Element with a position value absolute or relative and z-index value other than auto.
+3. Element with a position value fixed or sticky.
+4. Element with a container-type value size or inline-size set (See container queries).
+5. Element that is a flex item with a z-index value other than auto.
+6. Element that is a grid item with z-index value other than auto.
+7. Element with any of the following properties with a value other than none:
+    - transform
+    - scale
+    - rotate
+    - translate
+    - filter
+8. Element with the isolation value isolate.
+    
+</div>
+
+---
+
+# And so...
+
+## <div class="text-center mb-10 text-blue-300">[Solution](https://codepen.io/AndreaMargutti/pen/KwpwZjd)</div>
+
+This works because the red div creates a new stacking context, and so it's children (orange div) are positioned relative to it, not the body.
+If we want to position the orange div on top of the blue one we need to set a z-index value higer thant the blue one on the red div.
+
+### <span class="text-red-300">[What the Heck, z-index??](https://www.joshwcomeau.com/css/stacking-contexts/)</span>
