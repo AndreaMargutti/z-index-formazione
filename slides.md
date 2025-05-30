@@ -91,3 +91,17 @@ the opposite way an element can have a z-index value set without creating a stac
 The most common case is when we are using flex: flex items can use the property *z-index* but <ins>they do not always create a stacking context</ins>.
 
 <!-- TODO: add a codepen example -->
+
+## <a href="https://codepen.io/AndreaMargutti/pen/bNdEGoe?editors=1100" class="text-blue-300">z-index with flex</a>
+
+[Z-index Explained: How to stack element Using CSS](https://medium.com/free-code-camp/z-index-explained-how-to-stack-elements-using-css-7c5aa0f179b3)
+
+---
+
+# Some Useful Resources
+
+1. [z-index](https://developer.mozilla.org/en-US/docs/Web/CSS/z-index)
+2. [Using z-index](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_positioned_layout/Using_z-index)
+3. [Stacking without the z-index property](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_positioned_layout/Stacking_without_z-index)
+4. [Understanding z-index](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_positioned_layout/Understanding_z-index)
+5. [My approach to using z-index](https://david-gilbertson.medium.com/my-approach-to-using-z-index-eca67feb079c)
