@@ -120,6 +120,11 @@ The isolation CSS property determines whether an element must create a new stack
 
 With the default value *auto*, no new stacking context is created—unless it is overridden by other properties such as **transform**, **filter**, **opacity**, etc.
 
+---
+
+# A new Approach to Z-Index: Local vs Global
+
+[Global v Local Z-Index](https://david-gilbertson.medium.com/my-approach-to-using-z-index-eca67feb079c)
 
 ---
 
