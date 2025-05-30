@@ -103,6 +103,22 @@ The most common case is when we are using flex: flex items can use the property 
 
 # Isolation Property
 
+The isolation CSS property determines whether an element must create a new stacking context.
+
+```css
+.element {
+  isolation: auto; /* default / no new stacking context is created */
+}
+
+.element-2 {
+  isolation: isolate; /* a new stacking context is created */
+}
+```
+
+With the default value *auto*, no new stacking context is created—unless it is overridden by other properties such as **transform**, **filter**, **opacity**, etc.
+
+<!-- TODO: add a codepen example -->
+
 
 
 ---
