@@ -124,16 +124,18 @@ With the default value *auto*, no new stacking context is created—unless it is
 
 # A new Approach to Z-Index: Local vs Global
 
-With this new approach we are going to divide the z-index into two categories: **Global** and **Local**.
-Global z-index are refferred to as the "root" stacking context (HTML element) while the local ones are those who stays inside other stacking contexts
-created by any other element.
+With this new approach, we divide z-index usage into two categories: Global and Local.
 
-We can think of the global z-index as the "master" z-index that controls the overall stacking order of elements on the page, while local z-indexes are used to control the stacking order of elements within a specific context.
+Global z-index values refer to the "root" stacking context (typically the HTML element), while local z-index values are used within stacking contexts created by other elements.
 
-Local z-index will be used for elements that need to render on top of a sibiling or nearby element,
-Gloabl z-index will be used for elements that need to render on top of the entire page or a specific section of it.
+We can think of global z-index as the “master” layer that controls the overall stacking order of elements across the page, whereas local z-index values are used to manage the stacking order within a specific stacking context.
 
-Combine this approach with the isolation property to get a cleaner code, less design bugs and a more organized layers structure.
+Local z-index should be applied to elements that need to appear above a sibling or nearby element.
+Global z-index should be applied to elements that need to appear above the entire page or a significant section of it.
+
+Combine this approach with the isolation property to achieve cleaner code, fewer design bugs, and a more organized layer structure.
+
+<!-- TODO: add example -->
 
 [Global v Local Z-Index](https://david-gilbertson.medium.com/my-approach-to-using-z-index-eca67feb079c)
 
