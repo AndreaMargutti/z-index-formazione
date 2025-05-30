@@ -18,7 +18,7 @@ background: https://img.freepik.com/premium-photo/powerpoint-presentation-gradie
 
 ---
 class: text-left
-level: 2
+level: 3
 ---
 
 # What is Z-Index?
@@ -27,6 +27,11 @@ Z-Index is a CSS property that controls the vertical stacking order of elements 
 The higher the z-index value, the closer the element will appear to the user.
 
 <img src="https://bitsofco.de/img/zeDmwlyRbq-780.png" width="650px" class="mx-auto"/>
+
+---
+layout: image
+image: https://miro.medium.com/v2/resize:fit:1400/1*uGPV3qEF7yBq4PD0zua19A.png
+---
 
 ---
 
