@@ -85,3 +85,9 @@ If we want to position the orange div on top of the blue one we need to set a z-
 ---
 
 # This relationship is not a One to One
+
+It's important to note that a stacking context is not a one-to-one relationship with z-index. An element can create a stacking context without having a z-index value set, and in
+the opposite way an element can have a z-index value set without creating a stacking context. <span class="text-red-600">**They DO NOT always go toghether**</span>.
+The most common case is when we are using flex: flex items can use the property *z-index* but <ins>they do not always create a stacking context</ins>.
+
+<!-- TODO: add a codepen example -->
