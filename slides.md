@@ -260,9 +260,8 @@ Combine this approach with the isolation property to achieve cleaner code, fewer
 
 ## <span>Deep Dive</span>
 
-1. [Layout Algorithms](https://www.joshwcomeau.com/css/understanding-layout-algorithms)
-2. [Isolation Property - Browser Compability](https://caniuse.com/?search=isolation)
-3. [CSS Stacking Context inspector](https://chromewebstore.google.com/detail/css-stacking-context-insp/apjeljpachdcjkgnamgppgfkmddadcki?pli=1)
+1. [Isolation Property - Browser Compability](https://caniuse.com/?search=isolation)
+2. [Layout Mode - MDN](https://developer.mozilla.org/en-US/docs/Glossary/Layout_mode)
 
 </div>
 
