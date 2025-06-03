@@ -74,11 +74,16 @@ The higher the z-index value, the closer the element will appear to the user.
 }
 </style>
 
-
 ---
 layout: image
 image: https://miro.medium.com/v2/resize:fit:1400/1*uGPV3qEF7yBq4PD0zua19A.png
 ---
+
+---
+
+# <span class="text-red-300">But First</span>: how does the browser position elements?
+
+The defualt positioning of elements is called **Flow Layout**.
 
 ---
 
