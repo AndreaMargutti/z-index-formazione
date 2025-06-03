@@ -25,7 +25,7 @@ level: 3
 
 # What is Z-Index?
 
-Z-Index is a CSS property that controls the vertical stacking order of elements that <ins>overlap</ins>.
+Z-Index is a CSS property that controls the vertical stacking order of elements that <span class="underline underline-offset-2">overlap</span>.
 The higher the z-index value, the closer the element will appear to the user.
 <span class="text-blue-300">[Z-index First Example](https://codepen.io/AndreaMargutti/pen/OPVXZXV?editors=1100)</span>
 
@@ -83,7 +83,13 @@ image: https://miro.medium.com/v2/resize:fit:1400/1*uGPV3qEF7yBq4PD0zua19A.png
 
 # <span class="text-red-300">But First</span>: how does the browser position elements?
 
-The defualt positioning of elements is called **Flow Layout**.
+The defualt positioning of elements is called <span class="underline underline-offset-2">**Flow Layout**</span>.
+Normally, elements are positioned in the order they appear in the HTML document, from top to bottom. On the z axes,
+elements are stacked in the following order:
+1. Elements with a position value of static (default).
+2. Elements with a position value different thant static (relative, absolute, fixed, sticky).
+3. Elements with a z-index value other than auto (<span class="text-red-300">if z-index is a valid property</span>).
+
 
 ---
 
