@@ -12,7 +12,6 @@ fonts:
 background: https://img.freepik.com/premium-photo/powerpoint-presentation-gradient-with-some-effects-light-blue-dark-blue_555090-56528.jpg
 ---
 
-<!--TODO: fix based on comments from the review-->
 
 # Z-Index and Stacking Contexts in CSS
 
@@ -28,7 +27,54 @@ level: 3
 Z-Index is a CSS property that controls the vertical stacking order of elements that <ins>overlap</ins>.
 The higher the z-index value, the closer the element will appear to the user.
 
-<img src="https://bitsofco.de/img/zeDmwlyRbq-780.png" width="650px" class="mx-auto"/>
+<!-- [Z-index First Example](https://codepen.io/AndreaMargutti/pen/OPVXZXV?editors=1100) -->
+
+<div class="container">
+  <div class="blue">z-index 1</div>
+  <div class="red"> z-index 2</div>
+  <div class="green">z-index 3</div>
+  <div class="yellow">z-index 4</div>
+</div>
+
+<style>
+.container > div {
+  width: 110px;
+  height: 110px;
+  color: white;
+  margin: auto;
+  position: relative;
+  text-align: center;
+}
+
+.red {
+  background: red;
+  top: 30px;
+  left: 30px;
+  z-index: 2;
+}
+
+.blue {
+  background: blue;
+  top: 100px;
+}
+
+.green {
+  background: green;
+  top: -30px;
+  left: 60px;
+  z-index: 3;
+}
+
+.yellow {
+  background: yellow;
+  left: 80px;
+  top: -100px;
+  z-index: 4;
+  color: black !important;
+}
+
+
+</style>
 
 ---
 layout: image
