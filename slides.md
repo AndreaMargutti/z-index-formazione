@@ -121,7 +121,7 @@ The above code will not work because the element is not positioned. To make it w
   height: 100px;
   background-color: red;
   position: relative;
-  z-index: 1; /* This will not work */
+  z-index: 1; /* This will work */
 }
 ```
 ::
@@ -134,7 +134,27 @@ Saying that z-index only works on positioned elements is not quite accurate. To 
 property is not implemented in the Flow layout algorithm (default).
 But it works with position becasue the z-index property is implemented in the Positioned Layout as in the FlexBox / Grid Layout.
 
-## [Understanding Layout Algorithms](https://www.joshwcomeau.com/css/understanding-layout-algorithms/)
+::code-group
+
+```html [HTML ~i-vscode-icons:file-type-html~]
+<div class="box">
+  BOX 1
+</div>
+```
+
+```css [CSS ~i-vscode-icons:file-type-css~]
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: relative; /* change the layout from Flow to Positioned */
+  z-index: 1; /* Property is now usable and will have effect */
+}
+```
+
+::
+
+## <div class="mt-8">[Understanding Layout Algorithms](https://www.joshwcomeau.com/css/understanding-layout-algorithms/)</div>
 
 ---
 
