@@ -188,6 +188,41 @@ Well, to explain that, we need to understand what stacking contexts are and how 
 <div class="text-end"><strong>Source:</strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_positioned_layout/Stacking_context">MDN</a></div>
 
 ---
+level: 3
+layout: image-right
+background-size: contain
+image: https://www.joshwcomeau.com/_next/image/?url=%2Fimages%2Fstacking-contexts%2Fphotoshop-layers.png&w=640&q=75
+---
+
+# Stacking Contexts: Layers of PH
+
+In photo editing software like Photoshop or Figma, you work with layers: each layers represents a differrent element of the photo / design.
+
+In this editor we have the possibility to group layers together, creating a new layer that contains all the elements of the group.
+
+---
+layout: image-left
+background-size: contain
+image: https://www.joshwcomeau.com/_next/image/?url=%2Fimages%2Fstacking-contexts%2Fphotoshop-groups.png&w=640&q=75
+---
+
+Like files in a folder, a group allows us to segment our layers. In terms of stacking order, layers aren't allowed to “intermingle” between groups: All of dog's layers will appear on top of all of cat's layers.
+
+When we export the composition, we don't see the cat at all, since it's behind the dog:
+
+<img src="https://www.joshwcomeau.com/_next/image/?url=%2Fimages%2Fstacking-contexts%2Fdog-layers.jpg&w=640&q=75" alt="Dog Layers" class="w-1/2 mx-auto block mt-8">
+
+---
+
+When it comes to CSS and z-index, the concpet of stacking contexts is similar to the concept of layers in Photoshop or Figma.
+Elements can be grouped togheter into a stacking context, and when we give an element a z-index value this is only compared to other elements within the same stacking context.
+
+<div class="text-red-300 font-bold text-5xl text-center my-30">!Z-INDEX ARE NOT GLOBAL!</div>
+
+
+By default, a plain HTML document will have a single stacking context that encompasses all nodes, but we can create additional contexts
+
+---
 
 # The Solution
 
