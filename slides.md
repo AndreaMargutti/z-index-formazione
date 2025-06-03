@@ -2,6 +2,7 @@
 theme: seriph
 title: Z-Index and Stacking Contexts in CSS
 class: text-center
+mdc: true
 fonts:
   # basically the text
   sans: Robot
@@ -71,14 +72,59 @@ The higher the z-index value, the closer the element will appear to the user.
   z-index: 4;
   color: black !important;
 }
-
-
 </style>
+
 
 ---
 layout: image
 image: https://miro.medium.com/v2/resize:fit:1400/1*uGPV3qEF7yBq4PD0zua19A.png
 ---
+
+---
+
+# How does z-index work?
+
+Z-Index works by assigning a numerical value to an element, which determines its position in the stacking order relative to other elements on the page.
+But the z-index property *only works on positioned elements* (elements with a position value of relative, absolute, fixed, or sticky).
+
+::code-group
+
+```html [HTML ~i-vscode-icons:file-type-html~]
+<div class="box">
+BOX 1
+</div>
+```
+
+```css [CSS ~i-vscode-icons:file-type-css~]
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  z-index: 1; /* This will not work */
+}
+```
+::
+
+The above code will not work because the element is not positioned. To make it work, we need to add a position value:
+
+::code-group
+
+```html [HTML ~i-vscode-icons:file-type-html~]
+<div class="box">
+  BOX 1
+</div>
+```
+
+```css [CSS ~i-vscode-icons:file-type-css~]
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: relative;
+  z-index: 1; /* This will not work */
+}
+```
+::
 
 ---
 
