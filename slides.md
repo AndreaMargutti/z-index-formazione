@@ -26,8 +26,7 @@ level: 3
 
 Z-Index is a CSS property that controls the vertical stacking order of elements that <ins>overlap</ins>.
 The higher the z-index value, the closer the element will appear to the user.
-
-<!-- [Z-index First Example](https://codepen.io/AndreaMargutti/pen/OPVXZXV?editors=1100) -->
+<span class="text-blue-300">[Z-index First Example](https://codepen.io/AndreaMargutti/pen/OPVXZXV?editors=1100)</span>
 
 <div class="container">
   <div class="blue">z-index 1</div>
