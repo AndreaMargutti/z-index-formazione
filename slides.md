@@ -273,8 +273,10 @@ The most common case is when we are using flex: flex items can use the property 
 
 The isolation CSS property determines whether an element must create a new stacking context: 
 - No need to prescribe a z-index value
-- Can be used on statically-positioned* elements
+- Can be used on statically-positioned elements
 - Doesn't affect the child's rendering in any way
+- Keeps the code cleaner and easier to read
+- No need to change the position / layout of the element / component
 
 ```css
 .element {
