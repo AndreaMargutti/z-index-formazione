@@ -12,6 +12,8 @@ fonts:
 background: https://img.freepik.com/premium-photo/powerpoint-presentation-gradient-with-some-effects-light-blue-dark-blue_555090-56528.jpg
 ---
 
+<!--TODO: fix based on comments from the review-->
+
 # Z-Index and Stacking Contexts in CSS
 
 ## A new approach to understanding CSS stacking
