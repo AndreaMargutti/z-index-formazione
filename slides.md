@@ -224,11 +224,7 @@ By default, a plain HTML document will have a single stacking context that encom
 
 ---
 
-# The Solution
-
-To solve the problem with z-index, we need to understand how stacking contexts work and how to create them.
-
-## What creates a stacking context?
+# What creates a stacking context?
 
 <div class="text-sm">
 
