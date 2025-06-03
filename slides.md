@@ -128,6 +128,16 @@ The above code will not work because the element is not positioned. To make it w
 
 ---
 
+# How does z-index work? (2)
+
+Saying that z-index only works on positioned elements is not quite accurate. To be more precise, the example above doesn't work because the z-index
+property is not implemented in the Flow layout algorithm (default).
+But it works with position becasue the z-index property is implemented in the Positioned Layout as in the FlexBox / Grid Layout.
+
+## [Understanding Layout Algorithms](https://www.joshwcomeau.com/css/understanding-layout-algorithms/)
+
+---
+
 # The Problem with Z-Index
 
 But there's a problem that many developers face when working with z-index:
