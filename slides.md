@@ -90,6 +90,9 @@ elements are stacked in the following order:
 2. Elements with a position value different thant static (relative, absolute, fixed, sticky).
 3. Elements with a z-index value other than auto (<span class="text-red-300">if z-index is a valid property</span>).
 
+<!--TODO: remove or keep this image? -->
+<img src="https://miro.medium.com/v2/resize:fit:600/1*tgDL2s_DsMFmjMG9GK14AA.png" alt="Stacking Order" class="w-1/2 mx-auto block mt-8">
+
 
 ---
 
