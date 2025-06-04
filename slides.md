@@ -27,7 +27,7 @@ level: 3
 
 Z-Index is a CSS property that controls the vertical stacking order of elements that <span class="underline underline-offset-2">overlap</span>.
 The higher the z-index value, the closer the element will appear to the user.
-<span class="text-blue-300">[Z-index First Example](https://codepen.io/AndreaMargutti/pen/OPVXZXV?editors=1100)</span>
+<span class="text-blue-300">[CodePen](https://codepen.io/AndreaMargutti/pen/OPVXZXV?editors=1100)</span>
 
 <div class="container">
   <div class="blue">z-index 1</div>
@@ -75,11 +75,6 @@ The higher the z-index value, the closer the element will appear to the user.
 </style>
 
 ---
-layout: image
-image: https://miro.medium.com/v2/resize:fit:1400/1*uGPV3qEF7yBq4PD0zua19A.png
----
-
----
 
 # <span class="text-red-300">But First</span>: how does the browser position elements?
 
@@ -89,10 +84,6 @@ elements are stacked in the following order:
 1. Elements with a position value of static (default).
 2. Elements with a position value different thant static (relative, absolute, fixed, sticky).
 3. Elements with a z-index value other than auto (<span class="text-red-300">if z-index is a valid property</span>).
-
-<!--TODO: remove or keep this image? -->
-<img src="https://miro.medium.com/v2/resize:fit:600/1*tgDL2s_DsMFmjMG9GK14AA.png" alt="Stacking Order" class="w-1/2 mx-auto block mt-8">
-
 
 ---
 
@@ -168,15 +159,13 @@ But it works with position becasue the z-index property is implemented in the Po
 
 ::
 
-## <div class="mt-8">[Understanding Layout Algorithms](https://www.joshwcomeau.com/css/understanding-layout-algorithms/)</div>
-
 ---
 
 # The Problem with Z-Index
 
 But there's a problem that many developers face when working with z-index:
 
-## <div class="text-center mb-10 text-blue-300">[Z-Index not Working](https://codepen.io/AndreaMargutti/pen/QwbwaoW?editors=1100)</div>
+## [CodePen](https://codepen.io/AndreaMargutti/pen/QwbwaoW?editors=1100)
 
 Why does it not work as expected?
 Well, to explain that, we need to understand what stacking contexts are and how they work.
@@ -184,8 +173,6 @@ Well, to explain that, we need to understand what stacking contexts are and how 
 ## Stacking Contexts
 
 *Stacking context is a three-dimensional conceptualization of HTML elements along an imaginary z-axis relative to the user, who is assumed to be facing the viewport or the webpage. The stacking context determines how elements are layered on top of one another along the z-axis (think of it as the "depth" dimension on your screen). Stacking context determines the visual order of how overlapping content is rendered.*
-
-<div class="text-end"><strong>Source:</strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_positioned_layout/Stacking_context">MDN</a></div>
 
 ---
 level: 3
@@ -209,18 +196,6 @@ image: https://www.joshwcomeau.com/_next/image/?url=%2Fimages%2Fstacking-context
 Like files in a folder, a group allows us to segment our layers. In terms of stacking order, layers aren't allowed to “intermingle” between groups: All of dog's layers will appear on top of all of cat's layers.
 
 When we export the composition, we don't see the cat at all, since it's behind the dog:
-
-<img src="https://www.joshwcomeau.com/_next/image/?url=%2Fimages%2Fstacking-contexts%2Fdog-layers.jpg&w=640&q=75" alt="Dog Layers" class="w-1/2 mx-auto block mt-8">
-
----
-
-When it comes to CSS and z-index, the concpet of stacking contexts is similar to the concept of layers in Photoshop or Figma.
-Elements can be grouped togheter into a stacking context, and when we give an element a z-index value this is only compared to other elements within the same stacking context.
-
-<div class="text-red-300 font-bold text-5xl text-center my-30">!Z-INDEX ARE NOT GLOBAL!</div>
-
-
-By default, a plain HTML document will have a single stacking context that encompasses all nodes, but we can create additional contexts
 
 ---
 
@@ -248,24 +223,17 @@ By default, a plain HTML document will have a single stacking context that encom
 
 # And so...
 
-## <div class="text-center mb-10 text-blue-300">[Solution](https://codepen.io/AndreaMargutti/pen/KwpwZjd)</div>
+## <div class="text-center mb-10 text-blue-300">[CodePen](https://codepen.io/AndreaMargutti/pen/KwpwZjd)</div>
 
 This works because the red div creates a new stacking context, which means its children (orange div) are positioned relative to it, not the body.
 If we want to position the orange div on top of the blue one we need to set a z-index value higher than the blue one on the red div.
-
-### <span class="text-red-300">[What the Heck, z-index??](https://www.joshwcomeau.com/css/stacking-contexts/)</span>
 
 ---
 
 # This relationship is not a One to One
 
 It's important to note that a stacking context is not a one-to-one relationship with z-index. An element can create a stacking context without having a z-index value set, and in
-the opposite way an element can have a z-index value set without creating a stacking context. <span class="text-red-600">**They DO NOT always go together**</span>.
-The most common case is when we are using flex: flex items can use the property *z-index* but <ins>they do not always create a stacking context</ins>.
-
-## <a href="https://codepen.io/AndreaMargutti/pen/bNdEGoe?editors=1100" class="text-blue-300">z-index with flex</a>
-
-[Z-index Explained: How to stack element Using CSS](https://medium.com/free-code-camp/z-index-explained-how-to-stack-elements-using-css-7c5aa0f179b3)
+the opposite way an element can have a z-index value set without creating a stacking context. **They DO NOT always go together**.
 
 ---
 
@@ -304,39 +272,3 @@ Local z-index should be applied to elements that need to appear above a sibling 
 Global z-index should be applied to elements that need to appear above the entire page or a significant section of it.
 
 Combine this approach with the isolation property to achieve cleaner code, fewer design bugs, and a more organized layer structure.
-
-<!-- TODO: add example -->
-
-[Global v Local Z-Index](https://david-gilbertson.medium.com/my-approach-to-using-z-index-eca67feb079c)
-
----
-
-<div class="text-sm my-4">
-
-# Some Useful Resources
-
-1. [z-index](https://developer.mozilla.org/en-US/docs/Web/CSS/z-index)
-2. [Using z-index](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_positioned_layout/Using_z-index)
-3. [Stacking without the z-index property](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_positioned_layout/Stacking_without_z-index)
-4. [Understanding z-index](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_positioned_layout/Understanding_z-index)
-5. [My approach to using z-index](https://david-gilbertson.medium.com/my-approach-to-using-z-index-eca67feb079c)
-
-</div>
-
-<div class="text-sm my-4">
-
-## <span>Deep Dive</span>
-
-1. [Isolation Property - Browser Compability](https://caniuse.com/?search=isolation)
-2. [Layout Mode - MDN](https://developer.mozilla.org/en-US/docs/Glossary/Layout_mode)
-
-</div>
-
-## <span>Debugging Tools</span>
-
-<div class="text-sm my-4">
-
-1. **Chrome DevTools Extension**: [CSS Stacking Context Inspector](https://chromewebstore.google.com/detail/css-stacking-context-insp/apjeljpachdcjkgnamgppgfkmddadcki)
-2. **VsCode Extension**: [Better CSS Stacking Contexts](https://marketplace.visualstudio.com/items?itemName=mikerheault.vscode-better-css-stacking-contexts)
-
-</div>
