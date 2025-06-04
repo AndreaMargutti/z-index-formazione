@@ -76,41 +76,28 @@ The higher the z-index value, the closer the element will appear to the user.
 
 ---
 
-# <span class="text-red-300">But First</span>: how does the browser position elements?
+# But First: how does the browser position elements?
 
-The defualt positioning of elements is called <span class="underline underline-offset-2">**Flow Layout**</span>.
-Normally, elements are positioned in the order they appear in the HTML document, from top to bottom. On the z axes,
-elements are stacked in the following order:
-1. Elements with a position value of static (default).
-2. Elements with a position value different thant static (relative, absolute, fixed, sticky).
-3. Elements with a z-index value other than auto (<span class="text-red-300">if z-index is a valid property</span>).
+The Browser uses a *layout algorithm* to determine how elements are positioned on the page.
+By default, the browser uses the **Flow Layout**, which positions elements in the order they appear in the HTML document, from top to bottom.
+There are other layouts,:
+1. Positioned (eg. relative, absolute)
+2. FlexBox
+3. Grid
+4. Table
+
 
 ---
 
 # How does z-index work?
 
 Z-Index works by assigning a numerical value to an element, which determines its position in the stacking order relative to other elements on the page.
-But the z-index property *only works on positioned elements* (elements with a position value of relative, absolute, fixed, or sticky).
+Z-index is not implemented in all the layout algorithms, but it is used in the following:
 
-::code-group
+1. Positioned
+2. FlexBox / Grid
 
-```html [HTML ~i-vscode-icons:file-type-html~]
-<div class="box">
-BOX 1
-</div>
-```
-
-```css [CSS ~i-vscode-icons:file-type-css~]
-.box {
-  width: 100px;
-  height: 100px;
-  background-color: red;
-  z-index: 1; /* This will not work */
-}
-```
-::
-
-The above code will not work because the element is not positioned. To make it work, we need to add a position value:
+<div class="mt-8">
 
 ::code-group
 
@@ -131,33 +118,7 @@ The above code will not work because the element is not positioned. To make it w
 ```
 ::
 
----
-
-# How does z-index work? (2)
-
-Saying that z-index only works on positioned elements is not quite accurate. To be more precise, the example above doesn't work because the z-index
-property is not implemented in the Flow layout algorithm (default).
-But it works with position becasue the z-index property is implemented in the Positioned Layout as in the FlexBox / Grid Layout.
-
-::code-group
-
-```html [HTML ~i-vscode-icons:file-type-html~]
-<div class="box">
-  BOX 1
 </div>
-```
-
-```css [CSS ~i-vscode-icons:file-type-css~]
-.box {
-  width: 100px;
-  height: 100px;
-  background-color: red;
-  position: relative; /* change the layout from Flow to Positioned */
-  z-index: 1; /* Property is now usable and will have effect */
-}
-```
-
-::
 
 ---
 
@@ -167,35 +128,16 @@ But there's a problem that many developers face when working with z-index:
 
 ## [CodePen](https://codepen.io/AndreaMargutti/pen/QwbwaoW?editors=1100)
 
-Why does it not work as expected?
-Well, to explain that, we need to understand what stacking contexts are and how they work.
-
-## Stacking Contexts
-
-*Stacking context is a three-dimensional conceptualization of HTML elements along an imaginary z-axis relative to the user, who is assumed to be facing the viewport or the webpage. The stacking context determines how elements are layered on top of one another along the z-axis (think of it as the "depth" dimension on your screen). Stacking context determines the visual order of how overlapping content is rendered.*
-
 ---
 level: 3
 layout: image-right
 background-size: contain
-image: https://www.joshwcomeau.com/_next/image/?url=%2Fimages%2Fstacking-contexts%2Fphotoshop-layers.png&w=640&q=75
----
-
-# Stacking Contexts: Layers of PH
-
-In photo editing software like Photoshop or Figma, you work with layers: each layers represents a differrent element of the photo / design.
-
-In this editor we have the possibility to group layers together, creating a new layer that contains all the elements of the group.
-
----
-layout: image-left
-background-size: contain
 image: https://www.joshwcomeau.com/_next/image/?url=%2Fimages%2Fstacking-contexts%2Fphotoshop-groups.png&w=640&q=75
 ---
 
-Like files in a folder, a group allows us to segment our layers. In terms of stacking order, layers aren't allowed to “intermingle” between groups: All of dog's layers will appear on top of all of cat's layers.
+# Stacking Contexts
 
-When we export the composition, we don't see the cat at all, since it's behind the dog:
+*Stacking context is a three-dimensional conceptualization of HTML elements along an imaginary z-axis relative to the user, who is assumed to be facing the viewport or the webpage. The stacking context determines how elements are layered on top of one another along the z-axis (think of it as the "depth" dimension on your screen). Stacking context determines the visual order of how overlapping content is rendered.*
 
 ---
 
@@ -204,18 +146,13 @@ When we export the composition, we don't see the cat at all, since it's behind t
 <div class="text-sm">
 
 1. Root element of the document.
-2. Element with a position value absolute or relative and z-index value other than auto.
-3. Element with a position value fixed or sticky.
+2. Element with a position value other thant static (with relative and absolute we need z-index != auto).
 4. Element with a container-type value size or inline-size set (See container queries).
-5. Element that is a flex item with a z-index value other than auto.
-6. Element that is a grid item with z-index value other than auto.
-7. Element with any of the following properties with a value other than none:
-    - transform
-    - scale
-    - rotate
-    - translate
-    - filter
-8. Element with the isolation value isolate.
+5. Element that is a flex / grid item with a z-index value other than auto.
+6. Setting opacity to a value less than 1
+7. Applying a mix-blend-mode other than normal
+8. Using transform, filter, clip-path, or perspective
+9. Element with the isolation value isolate.
     
 </div>
 
@@ -225,8 +162,11 @@ When we export the composition, we don't see the cat at all, since it's behind t
 
 ## [CodePen](https://codepen.io/AndreaMargutti/pen/KwpwZjd)
 
-This works because the red div creates a new stacking context, which means its children (orange div) are positioned relative to it, not the body.
-If we want to position the orange div on top of the blue one we need to set a z-index value higher than the blue one on the red div.
+<div class="mt-8">
+This example is now working as expected because by removing the `position: absolute`from the `.red`div, we are
+no longer creating a new stacking context, and the z-index values are now applied correctly.
+</div>
+
 
 ---
 
