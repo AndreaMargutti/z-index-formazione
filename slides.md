@@ -177,8 +177,10 @@ _Stacking context is a three-dimensional conceptualization of HTML elements alon
 <br />
 
 <div class="mt-8">
-This example is now working as expected because by removing the `position: absolute`from the `.red`div, we are
+
+This example is now working as expected because by removing the `position: fixed` from the `.red` div, we are
 no longer creating a new stacking context, and the z-index values are now applied correctly.
+
 </div>
 
 ---
