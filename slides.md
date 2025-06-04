@@ -18,10 +18,8 @@ background: https://img.freepik.com/premium-photo/powerpoint-presentation-gradie
 ## A new approach to understanding CSS stacking
 
 ---
-
 class: text-left
 level: 3
-
 ---
 
 # What is Z-Index?
@@ -141,12 +139,10 @@ But there's a problem that many developers face when working with z-index
 [CodePen](https://codepen.io/AndreaMargutti/pen/QwbwaoW?editors=1100)
 
 ---
-
 level: 3
 layout: image-right
 background-size: contain
 image: https://www.joshwcomeau.com/_next/image/?url=%2Fimages%2Fstacking-contexts%2Fphotoshop-groups.png&w=640&q=75
-
 ---
 
 # Stacking Contexts
