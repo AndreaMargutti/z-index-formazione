@@ -223,7 +223,7 @@ When we export the composition, we don't see the cat at all, since it's behind t
 
 # And so...
 
-## <div class="text-center mb-10 text-blue-300">[CodePen](https://codepen.io/AndreaMargutti/pen/KwpwZjd)</div>
+## [CodePen](https://codepen.io/AndreaMargutti/pen/KwpwZjd)
 
 This works because the red div creates a new stacking context, which means its children (orange div) are positioned relative to it, not the body.
 If we want to position the orange div on top of the blue one we need to set a z-index value higher than the blue one on the red div.
